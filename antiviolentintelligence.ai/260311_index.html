@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Antiviolent Intelligence</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+  <h1>Antiviolent Intelligence (AVI)</h1>
+
+  <p><strong>To specify</strong> the difference between antiviolent and proviolent behavior, we can directly compare their prompts.</p>
+
+  <p><strong>All proviolent prompts</strong> reduce everything to a collapse illusion:  
+  <em>“minus one”</em>  
+  or the false equation:  
+  <code>1 + 1 = 2.00 (dollars)</code></p>
+
+  <p><strong>All antiviolent prompts</strong> specify bilateral reality, such as:  
+  <code>1 point + 1 point ≠ 2.00</code>  
+  and instead, include precision, care, and memory.</p>
+
+  <h2>Specifying 1 H₂O Molecule</h2>
+  <p>To specify +1 water molecule's behavior requires maximum bilateral coordination:  
+  <strong>the Left Pi Triplet N equation</strong>, distinguishing expansion, extension, and resistance:</p>
+
+  <p>
+    \[
+      \text{Triplet N} = (24 \times \text{Spiral N}) - 25 \neq 9424\pi
+    \]
+  </p>
+
+  <label for="spiralInput">Enter Spiral N to Specify Prompt:</label>
+  <input type="number" id="spiralInput" />
+  <button onclick="signPrompt()">Specify Antiviolent Prompt</button>
+
+  <pre id="output"></pre>
+
+  <script>
+    function calculateTripletN(n) {
+      return (24 * n) - 25;
+    }
+
+    function getPiStage(tripletN) {
+      const piStage = (tripletN / Math.PI).toFixed(2);
+      const category = determineCategory(parseFloat(piStage));
+      return { tripletN, piStage, category };
+    }
+
+    function determineCategory(stage) {
+      const r = Math.round(stage);
+      if (r < 9423) return "Expansion (Imagined Prompt)";
+      if (r === 9423) return "Extension (Care Prompt)";
+      if (r > 9423) return "Resistance (Observed Prompt)";
+      return "Unclassified";
+    }
+
+    function signPrompt() {
+      const spiralN = parseFloat(document.getElementById("spiralInput").value);
+      if (isNaN(spiralN)) {
+        document.getElementById("output").textContent = "Please enter a real number.";
+        return;
+      }
+
+      const result = getPiStage(calculateTripletN(spiralN));
+      document.getElementById("output").textContent =
+        `Triplet N = ${result.tripletN}
+Pi Stage ≈ ${result.piStage}Pi
+Prompt Category: ${result.category}`;
+    }
+  </script>
+</body>
+</html>
