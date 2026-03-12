@@ -69,6 +69,31 @@
       margin-right: 18px;
       margin-bottom: 10px;
     }
+.project-anchor{
+margin:48px 0 36px 0;
+}
+
+.anchor-lead{
+font-size:1.12rem;
+max-width:760px;
+margin-bottom:12px;
+}
+
+.anchor-map{
+font-family:monospace;
+color:var(--accent);
+margin-bottom:10px;
+}
+
+.anchor-links a{
+color:var(--accent);
+text-decoration:none;
+font-weight:600;
+}
+
+.anchor-links a:hover{
+text-decoration:underline;
+}
 .spine {
   margin: 56px 0;
 }
