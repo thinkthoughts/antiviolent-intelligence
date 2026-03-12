@@ -69,6 +69,62 @@
       margin-right: 18px;
       margin-bottom: 10px;
     }
+.spine {
+  margin: 56px 0;
+}
+
+.spine h2 {
+  margin-bottom: 14px;
+}
+
+.spine-intro {
+  max-width: 760px;
+  margin-bottom: 22px;
+}
+
+.spine-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 14px;
+}
+
+.spine-card {
+  display: block;
+  padding: 18px 16px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: rgba(255,255,255,0.02);
+  color: var(--fg);
+  text-decoration: none;
+  transition: transform 0.15s ease, border-color 0.15s ease, background 0.15s ease;
+}
+
+.spine-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent);
+  background: rgba(255,255,255,0.035);
+  text-decoration: none;
+}
+
+.spine-label {
+  color: var(--accent);
+  font-weight: 700;
+  margin-bottom: 8px;
+  font-size: 1rem;
+  letter-spacing: 0.01em;
+}
+
+.spine-symbol {
+  font-weight: 600;
+  margin-bottom: 8px;
+  font-size: 1rem;
+}
+
+.spine-text {
+  color: var(--muted);
+  font-size: 0.97rem;
+  line-height: 1.5;
+}
     
 .site-footer{
   margin-top:60px;
