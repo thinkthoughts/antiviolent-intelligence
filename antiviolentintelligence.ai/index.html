@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Antiviolent Intelligence · 9423 Phase‑Lock</title>
+    <title>antiviolent intelligence · 9423 Phase‑Lock</title>
     <style>
         body {
             background: #0b0f17;
@@ -129,6 +129,21 @@
             display: block;
             margin-top: 0.6rem;
         }
+        .section-card {
+            background: #111a26;
+            border-radius: 20px;
+            padding: 1.5rem 2rem;
+            margin: 2rem 0;
+            border: 1px solid #253545;
+            scroll-margin-top: 1rem;
+        }
+        .section-card h2 {
+            margin-top: 0;
+            color: #c9dff2;
+            font-weight: 350;
+            border-bottom: 1px solid #2f4057;
+            padding-bottom: 0.5rem;
+        }
         .footer {
             margin-top: 4rem;
             padding-top: 1.5rem;
@@ -148,15 +163,15 @@
     <h1>antiviolent intelligence</h1>
     <div class="subtitle">9423 · 45° · 1/25 · phase‑lock</div>
 
-    <!-- Hashtag groups -->
+    <!-- Hashtag groups (now linked to sections) -->
     <div class="hashtag-group">
         <span>⚡</span>
         <a href="https://github.com/thinkthoughts/arxiv5867" target="_blank">#arXiv5867</a> 
         <span style="opacity:0.4;">≠</span> 
-        <a href="#" style="opacity:0.7;">#false5678</a> &nbsp;&nbsp;|&nbsp;&nbsp;
-        <a href="#">#9423Phase</a> &nbsp;&nbsp;|&nbsp;&nbsp;
-        <a href="#">#SDG5</a> &nbsp;&nbsp;|&nbsp;&nbsp;
-        <a href="#">#StopWar5</a>
+        <a href="#false5678" style="opacity:0.7;">#false5678</a> &nbsp;&nbsp;|&nbsp;&nbsp;
+        <a href="#order">#9423Order</a> &nbsp;&nbsp;|&nbsp;&nbsp;
+        <a href="#sdg5">#SDG5</a> &nbsp;&nbsp;|&nbsp;&nbsp;
+        <a href="#stopwar5">#StopWar5</a>
         <div style="margin-top: 0.6rem; font-size: 1rem; opacity: 0.8;">
             📐 45° invariant · 🚦 phase‑locked · 🌿 1/25 freedom
         </div>
@@ -178,7 +193,7 @@
 
         <a href="https://github.com/thinkthoughts/arxiv5867/blob/main/papers/9423-invariant.pdf" class="btn btn-solid" target="_blank">📄 Read the paper (PDF)</a>
         <a href="https://github.com/thinkthoughts/arxiv5867" class="btn" target="_blank">📁 GitHub repo</a>
-        <a href="#" class="btn" target="_blank">🌀 9423 spiral</a>
+        <a href="#spiral" class="btn" target="_blank">🌀 9423 spiral</a>
 
         <!-- Quick invariant display -->
         <div class="invariant">
@@ -187,8 +202,8 @@
         </div>
     </div>
 
-    <!-- 3 core ideas -->
-    <div style="display: flex; flex-wrap: wrap; gap: 1.5rem; margin: 2.5rem 0;">
+    <!-- 3 core ideas (now with ids) -->
+    <div style="display: flex; flex-wrap: wrap; gap: 1.5rem; margin: 2.5rem 0;" id="order">
         <div style="flex: 1 1 200px; background: #121b28; border-radius: 20px; padding: 1.5rem;">
             <div style="font-size:2.2rem; margin-bottom:0.2rem;">⏣</div>
             <h3 style="margin:0 0 0.5rem 0;">9423 order</h3>
@@ -204,6 +219,27 @@
             <h3 style="margin:0 0 0.5rem 0;">1/25 freedom</h3>
             <p style="color:#a3bedb;">Irreducible generative term — the gap sieves cannot close.</p>
         </div>
+    </div>
+
+    <!-- Deeper sections for hashtag navigation -->
+    <div class="section-card" id="false5678">
+        <h2>#false5678 · the artifact</h2>
+        <p>Where the invariant does <em>not</em> hold — linear indexing, zeroist flattening, collapse under parity. Distinguished from #arXiv5867 by the absence of 45° phase‑lock.</p>
+    </div>
+
+    <div class="section-card" id="sdg5">
+        <h2>#SDG5 · structural equity</h2>
+        <p>Gender equality as a symmetry condition: at 45°, even/odd contributions balance. The 1/25 term is the space where freedom persists — equity preserves the gap, doesn’t flatten it.</p>
+    </div>
+
+    <div class="section-card" id="stopwar5">
+        <h2>#StopWar5 · hardware, not software</h2>
+        <p>War is physical — metal, blood, ground. The 1/25 freedom term is grief, refusal, life. Antiviolent intelligence keeps that gap open.</p>
+    </div>
+
+    <div class="section-card" id="spiral">
+        <h2>🌀 9423 spiral</h2>
+        <p>The order [9,4,2,3] applied across scales — each return is at a new level, not the same place. Verified from primorial 30 to 10²³.</p>
     </div>
 
     <!-- hashtag row (clean) -->
@@ -224,7 +260,7 @@
     </div>
 
 </div>
-<!-- math rendering (simple fallback) -->
+<!-- math rendering -->
 <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" id="MathJax-script" async></script>
 </body>
 </html>
