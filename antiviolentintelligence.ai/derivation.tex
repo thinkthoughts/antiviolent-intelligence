@@ -1,0 +1,154 @@
+\documentclass[11pt]{article}
+
+\usepackage{amsmath, amssymb}
+
+\title{Density Behavior Under Primorial Sieve and Structured Modular Constraints}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section{Domain Definition}
+
+Let
+\[
+S_L = \{ n \leq L : n \equiv 5 \pmod{6} \}.
+\]
+
+We define the normalized density:
+\[
+D(L) = \frac{|S_L|}{L/6}.
+\]
+
+All results are evaluated within this progression.
+
+\section{Primorial Sieve}
+
+\subsection{Definition}
+
+Let $p_1, p_2, \dots, p_k$ denote the first $k$ primes and define the primorial:
+\[
+P_k = \prod_{i=1}^k p_i.
+\]
+
+We consider the filtered set:
+\[
+S_{k,L} = \{ n \leq L : n \equiv 5 \pmod{6}, \ \gcd(n, P_k) = 1 \}.
+\]
+
+\subsection{Reduction}
+
+Since $n \equiv 5 \pmod{6}$ implies $\gcd(n,6)=1$, primes $2$ and $3$ do not contribute additional filtering.
+
+Thus, only primes $p \geq 5$ affect the density.
+
+\subsection{Density Formula}
+
+Assuming independence of residue classes modulo distinct primes, the density is:
+\[
+D_k = \prod_{\substack{p \mid P_k \\ p \geq 5}} \left(1 - \frac{1}{p}\right).
+\]
+
+\subsection{Asymptotic Behavior}
+
+As $k \to \infty$,
+\[
+\prod_{p \geq 5} \left(1 - \frac{1}{p}\right) = 0,
+\]
+by divergence of the harmonic series over primes.
+
+Therefore:
+\[
+D_k \to 0.
+\]
+
+\section{Structured Modular Constraint}
+
+\subsection{Definition}
+
+Let $m$ be a positive integer such that $\gcd(m,6)=1$.
+
+Define:
+\[
+S_{m,L} = \{ n \leq L : n \equiv 5 \pmod{6}, \ n \not\equiv 0 \pmod{m} \}.
+\]
+
+\subsection{Density Formula}
+
+Within the progression $n \equiv 5 \pmod{6}$, residue classes modulo $m$ are uniformly distributed when $\gcd(m,6)=1$.
+
+Thus:
+\[
+D = 1 - \frac{1}{m}.
+\]
+
+\subsection{Example}
+
+For $m = 25$:
+\[
+D = 1 - \frac{1}{25} = \frac{24}{25}.
+\]
+
+\section{Multi-Constraint System}
+
+\subsection{Definition}
+
+Let $m_1, \dots, m_r$ be pairwise coprime integers with $\gcd(m_i,6)=1$.
+
+Define:
+\[
+S_{L} = \{ n \leq L : n \equiv 5 \pmod{6}, \ n \not\equiv 0 \pmod{m_i} \ \forall i \}.
+\]
+
+\subsection{Density Formula}
+
+By independence of residue classes modulo pairwise coprime moduli:
+\[
+D = \prod_{i=1}^r \left(1 - \frac{1}{m_i}\right).
+\]
+
+\subsection{Example}
+
+For $m_1 = 25$, $m_2 = 49$:
+\[
+D = \left(1 - \frac{1}{25}\right)\left(1 - \frac{1}{49}\right)
+= \frac{24}{25} \cdot \frac{48}{49}.
+\]
+
+\section{Comparison of Systems}
+
+\subsection{Primorial Sieve}
+
+\[
+D_k = \prod_{p \geq 5} \left(1 - \frac{1}{p}\right) \to 0.
+\]
+
+\subsection{Structured Constraints}
+
+\[
+D = \prod_{i=1}^r \left(1 - \frac{1}{m_i}\right),
+\]
+which remains bounded for finite $r$.
+
+\subsection{Conclusion}
+
+The two systems exhibit fundamentally different behavior:
+
+\begin{itemize}
+\item Multiplicative prime filtering produces density decay.
+\item Finite modular constraints preserve bounded density.
+\end{itemize}
+
+Therefore, density collapse is not a universal property of filtering, but a consequence of unbounded multiplicative accumulation.
+
+\section{Remarks}
+
+\begin{itemize}
+\item All formulas assume uniform distribution across admissible residue classes.
+\item Independence holds exactly for coprime moduli via the Chinese Remainder Theorem.
+\item The distinction between infinite prime products and finite modular products is structural, not numerical.
+\end{itemize}
+
+\end{document}
