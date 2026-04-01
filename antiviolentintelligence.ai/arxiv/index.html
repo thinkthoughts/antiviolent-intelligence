@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>arXiv Correspondence Index</title>
+
+<style>
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  background: #faf9f7;
+  color: #1a1a1a;
+  padding: 2rem 1rem;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+h1 {
+  margin-bottom: 0.5rem;
+}
+
+p {
+  margin-bottom: 1.5rem;
+  color: #555;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+th, td {
+  padding: 10px 12px;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+th {
+  cursor: pointer;
+  background: #f3efe9;
+}
+
+tr:hover {
+  background: #faf6f1;
+}
+
+a {
+  color: #b45f2b;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.badge {
+  font-size: 0.75rem;
+  background: #eee;
+  padding: 2px 6px;
+  border-radius: 6px;
+}
+
+</style>
+</head>
+
+<body>
+<div class="container">
+
+<h1>arXiv Correspondence Notes</h1>
+
+<p>
+Core resources:
+<a href="/main.pdf">main.pdf</a> ·
+<a href="https://github.com/yourname/arxiv5867">arxiv5867 repo</a>
+</p>
+
+<table id="arxivTable">
+<thead>
+<tr>
+  <th>Area</th>
+  <th>arXiv ID</th>
+  <th>Title</th>
+  <th>Note</th>
+  <th>Bridge</th>
+  <th>Status</th>
+</tr>
+</thead>
+
+<tbody>
+
+<tr>
+  <td>math.HO</td>
+
+  <td>
+    <a href="https://arxiv.org/arxiv/2603.26524">
+      2603.26524
+    </a>
+  </td>
+
+  <td>
+    Mathematical methods and human thought in the age of AI
+  </td>
+
+  <td>
+    <a href="/arxiv/2603.26524/">
+      9423 Phase-Lock Note
+    </a>
+  </td>
+
+  <td>
+    bounded constraints vs collapse
+  </td>
+
+  <td>
+    <span class="badge">mapped</span>
+  </td>
+</tr>
+
+</tbody>
+</table>
+
+</div>
+
+<script>
+// simple column sort
+document.querySelectorAll("th").forEach((header, colIndex) => {
+  header.addEventListener("click", () => {
+    const rows = Array.from(document.querySelectorAll("tbody tr"));
+
+    const asc = header.classList.toggle("asc");
+
+    rows.sort((a, b) => {
+      let A = a.children[colIndex].innerText.toLowerCase();
+      let B = b.children[colIndex].innerText.toLowerCase();
+
+      return asc ? A.localeCompare(B) : B.localeCompare(A);
+    });
+
+    const tbody = document.querySelector("tbody");
+    rows.forEach(row => tbody.appendChild(row));
+  });
+});
+</script>
+
+</body>
+</html>
