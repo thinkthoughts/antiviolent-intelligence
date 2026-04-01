@@ -1,210 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-  <title>Interpretive Note on arXiv:2603.26524</title>
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      background: #faf9f7;
-      color: #1a1a1a;
-      font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, 'Times New Roman', serif;
-      line-height: 1.5;
-      padding: 2rem 1rem;
-    }
-    .container {
-      max-width: 1100px;
-      margin: 0 auto;
-      background: #ffffff;
-      border-radius: 28px;
-      box-shadow: 0 12px 30px rgba(0,0,0,0.05), 0 2px 4px rgba(0,0,0,0.02);
-      overflow: hidden;
-      border: 1px solid #eae7e2;
-    }
-    .paper-header {
-      padding: 2rem 2rem 1.2rem 2rem;
-      border-bottom: 1px solid #ece7e0;
-      background: #ffffff;
-    }
-    .arxiv-id {
-      font-family: 'SF Mono', 'JetBrains Mono', monospace;
-      font-size: 0.85rem;
-      letter-spacing: -0.2px;
-      color: #b45f2b;
-      background: #fef4e8;
-      display: inline-block;
-      padding: 0.2rem 0.7rem;
-      border-radius: 30px;
-      margin-bottom: 0.75rem;
-    }
-    h1 {
-      font-size: 1.9rem;
-      font-weight: 550;
-      letter-spacing: -0.02em;
-      line-height: 1.2;
-      margin: 0.5rem 0 0.25rem 0;
-      color: #1f2a2e;
-    }
-    .authors {
-      font-size: 0.95rem;
-      color: #4b5563;
-      margin-top: 0.5rem;
-      border-left: 3px solid #d4c6b2;
-      padding-left: 1rem;
-    }
-    .abstract {
-      margin-top: 1.2rem;
-      font-size: 0.95rem;
-      color: #2c3e2f;
-      background: #fefcf8;
-      padding: 1rem 1.2rem;
-      border-radius: 18px;
-      border: 1px solid #efe6db;
-    }
-    .strip {
-      background: #f0ede7;
-      padding: 0.75rem 2rem;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: baseline;
-      gap: 1rem;
-      font-family: 'SF Mono', monospace;
-      font-size: 0.85rem;
-      border-bottom: 1px solid #e2d9cf;
-      color: #2d3e2b;
-    }
-    .badge {
-      background: #2c3a27;
-      color: #f0ede0;
-      padding: 0.2rem 0.9rem;
-      border-radius: 40px;
-      font-weight: 500;
-      letter-spacing: 0.3px;
-    }
-    .analysis {
-      padding: 2rem 2rem 2.2rem 2rem;
-    }
-    h2 {
-      font-size: 1.35rem;
-      font-weight: 520;
-      letter-spacing: -0.3px;
-      margin: 1.5rem 0 0.8rem 0;
-      color: #2c2b26;
-      border-left: 4px solid #b87333;
-      padding-left: 0.9rem;
-    }
-    h2:first-of-type { margin-top: 0; }
-    h3 {
-      font-weight: 540;
-      font-size: 1.05rem;
-      margin: 1.2rem 0 0.4rem 0;
-      color: #3a4a36;
-    }
-    p, li { font-size: 0.96rem; }
-    .grid-3 {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1.5rem;
-      margin: 1.2rem 0 1.8rem;
-    }
-    .card {
-      flex: 1;
-      min-width: 180px;
-      background: #fefbf7;
-      border-radius: 24px;
-      padding: 1rem 1.2rem;
-      border: 1px solid #e7dfd4;
-      box-shadow: 0 1px 2px rgba(0,0,0,0.02);
-    }
-    .card .symbol {
-      font-size: 2.2rem;
-      font-weight: 500;
-      font-family: monospace;
-      margin-bottom: 0.4rem;
-      color: #b45a2e;
-    }
-    .card .title {
-      font-weight: 600;
-      font-size: 1rem;
-      letter-spacing: -0.2px;
-      margin-bottom: 0.5rem;
-    }
-    .math-inline {
-      font-family: 'SF Mono', 'Courier New', monospace;
-      background: #f0ede8;
-      padding: 0.1rem 0.3rem;
-      border-radius: 8px;
-      font-size: 0.85rem;
-    }
-    .diagram {
-      background: #f6f3ed;
-      padding: 1.2rem 1.5rem;
-      border-radius: 24px;
-      margin: 1.8rem 0;
-      text-align: center;
-      border: 1px solid #e0d6ca;
-    }
-    .angle-highlight {
-      font-size: 1.3rem;
-      font-weight: 500;
-      background: #e9e2d7;
-      display: inline-block;
-      padding: 0.2rem 1rem;
-      border-radius: 60px;
-      margin: 0 0.2rem;
-    }
-    .note {
-      background: #f7f2ea;
-      border-radius: 22px;
-      padding: 0.9rem 1.2rem;
-      margin: 1.4rem 0;
-      border: 1px solid #eadfce;
-    }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      background: #fffdf9;
-      border-radius: 20px;
-      overflow: hidden;
-      margin: 0.5rem 0;
-    }
-    th, td {
-      text-align: left;
-      padding: 10px 8px;
-      border-bottom: 1px solid #f0e6dc;
-      vertical-align: top;
-    }
-    th { border-bottom: 1px solid #e2d4c6; }
-    tr:last-child td { border-bottom: none; }
-    ul { margin-left: 1.4rem; }
-    hr {
-      border: none;
-      border-top: 1px solid #e2d7cb;
-      margin: 1rem 0;
-    }
-    .footnote {
-      font-size: 0.78rem;
-      color: #6b5a4a;
-      margin-top: 2rem;
-      border-top: 1px solid #ece1d4;
-      padding-top: 1rem;
-      text-align: center;
-    }
-    @media (max-width: 680px) {
-      .container { border-radius: 20px; }
-      .analysis, .paper-header { padding: 1.2rem; }
-      h1 { font-size: 1.5rem; }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>9423 Phase-Lock Note | arXiv:2603.26524</title>
+
+<style>
+/* (keep your existing styles unchanged) */
+</style>
 </head>
+
 <body>
 <div class="container">
+
   <div class="paper-header">
     <div class="arxiv-id">arXiv:2603.26524 [math.HO]</div>
-    <h1>Interpretive Note on “Mathematical methods and human thought in the age of AI”</h1>
-    <div class="authors">Original paper: Tanya Klowden, Terence C. Tao (submitted 27 Mar 2026)</div>
+
+    <h1>9423 Phase-Lock Note on “Mathematical methods and human thought in the age of AI”</h1>
+
+    <div style="margin-top: 0.75rem; font-size: 0.85rem;">
+      <a href="/arxiv/index.html">← arXiv index</a> · 
+      <a href="/main.pdf">main.pdf</a> · 
+      <a href="https://github.com/thinkthoughts/arxiv5867">repo</a>
+    </div>
+
+    <div class="authors">
+      Original paper: Tanya Klowden, Terence C. Tao (submitted 27 Mar 2026)
+    </div>
+
     <div class="abstract">
       <strong>Paper abstract excerpt</strong><br>
       Artificial intelligence (AI) is the name popularly given to a broad spectrum of computer tools designed to perform increasingly complex cognitive tasks… the paper considers the rapidly evolving impact of AI on traditional questions of philosophy, with emphasis on mathematics and real-world outcomes, and argues that AI development should remain fundamentally human-centered.
@@ -212,112 +35,113 @@
   </div>
 
   <div class="strip">
-    <span>Interpretive bridge: paper summary → mathematical correspondence → optional extension</span>
+    <span>9423 Phase-Lock Note · structural correspondence</span>
     <span>24/25 bounded density vs vanishing under unbounded filtering</span>
-    <span class="badge">Correspondence, not attribution</span>
+    <span class="badge">correspondence, not attribution</span>
   </div>
 
   <div class="analysis">
+
     <h2>1. Summary of the paper</h2>
     <p>
-      Klowden and Tao discuss AI as part of a long history of mathematical and cognitive tools, emphasizing that increasingly powerful systems should remain connected to human judgment, human purposes, and real-world limits. On this reading, the paper is less about unrestricted automation than about a constrained expansion of human capability.
+      Klowden and Tao discuss AI as part of a long history of mathematical and cognitive tools, emphasizing that increasingly powerful systems should remain connected to human judgment, human purposes, and real-world limits.
     </p>
+
     <p>
-      The key theme for this bridge note is simple: <strong>bounded tools can enlarge human thought without replacing human thought</strong>. That is the point of contact with the mathematical note linked below.
+      The central theme is that <strong>AI should function as a bounded tool that expands human thought rather than replaces it</strong>.
     </p>
 
     <h2>2. Mathematical correspondence</h2>
+
     <p>
-      In the accompanying number-theoretic note, the basic contrast is:
+      In the accompanying number-theoretic note, the key contrast is:
     </p>
+
     <div class="grid-3">
       <div class="card">
         <div class="symbol">Π</div>
         <div class="title">Constraint regime</div>
-        <div>Finite modular exclusions produce a bounded density, for example <span class="math-inline">24/25</span>.</div>
+        <div>Finite modular constraints produce bounded density (e.g., <span class="math-inline">24/25</span>).</div>
       </div>
+
       <div class="card">
         <div class="symbol">πₐ</div>
         <div class="title">Admissible structure</div>
-        <div>Under a fixed finite constraint set, a nonzero fraction of configurations remains admissible.</div>
+        <div>A fixed constraint set preserves a nonzero admissible region.</div>
       </div>
+
       <div class="card">
         <div class="symbol">Σ</div>
         <div class="title">Readout</div>
-        <div>The structural contrast is between <strong>preserved bounded density</strong> and <strong>collapse under unbounded filtering</strong>.</div>
+        <div>Contrast between <strong>bounded structure</strong> and <strong>collapse under unbounded filtering</strong>.</div>
       </div>
     </div>
 
-    <p>
-      More explicitly:
-    </p>
     <ul>
-      <li><strong>Finite modular constraints</strong> give products of the form <span class="math-inline">∏(1 − 1/mᵢ)</span>, which remain bounded when the constraint set is fixed.</li>
-      <li><strong>Unbounded multiplicative filtering</strong> gives products over more and more primes, which tend toward vanishing density.</li>
+      <li><strong>Finite modular constraints</strong> → bounded density (<span class="math-inline">∏(1 − 1/mᵢ)</span>)</li>
+      <li><strong>Unbounded multiplicative filtering</strong> → density tends toward collapse</li>
     </ul>
 
     <div class="diagram">
-      <div style="font-weight:500; margin-bottom:12px;">Structural bridge</div>
-      <div style="font-size:1.5rem; font-family: monospace;">bounded constraints → admissible structure → bounded density</div>
-      <div style="margin: 12px 0 6px;"><span class="angle-highlight">45° 📐</span></div>
-      <div style="font-size:0.9rem; color:#5c4e3c;">
-        In this site vocabulary, 45° is a visual shorthand for balanced correspondence, not a theorem of the original paper.
+      <div style="font-weight:500;">Structural bridge</div>
+      <div style="font-family: monospace; margin-top: 8px;">
+        bounded constraints → admissible structure → bounded density
+      </div>
+
+      <div style="margin-top: 10px;">
+        <span class="angle-highlight">45° 📐</span>
+      </div>
+
+      <div style="font-size:0.85rem; margin-top: 6px;">
+        Visual shorthand for balanced correspondence (site vocabulary).
       </div>
     </div>
 
     <h2>3. Bilateral / diagonal correspondence</h2>
+
     <p>
-      The correspondence proposed here is <strong>structural</strong>, not literal. Klowden and Tao discuss human-centered AI in philosophical and mathematical terms. The number-theoretic note discusses density under constraints. The bridge between them is this:
+      The correspondence is structural: both the paper and the number-theoretic model distinguish between:
     </p>
+
     <div class="note">
-      <strong>bounded, finite constraint systems preserve an admissible region; unbounded accumulation can collapse it.</strong>
+      <strong>bounded constraint systems that preserve structure vs unbounded accumulation that collapses it</strong>
     </div>
+
     <p>
-      That is the bilateral / diagonal point of contact: two different vocabularies describing the distinction between <strong>stable constrained structure</strong> and <strong>loss of structure under unrestricted accumulation</strong>.
+      This is the bilateral / diagonal alignment between the two domains.
     </p>
 
-    <h2>4. Optional interpretive layer</h2>
+    <h2>4. 9423 Phase-Lock (interpretive layer)</h2>
+
     <p>
-      In the broader vocabulary used across this site, that same contrast is sometimes tracked with terms like <strong>#atomsBalance</strong>, <strong>9423</strong>, or <strong>EFZA</strong>. Those terms are part of an interpretive extension layer. They are not claims made by the original arXiv paper, and they are not theorems derived from it.
+      Within the broader site vocabulary, this contrast is sometimes expressed using terms such as <strong>9423</strong>, <strong>#atomsBalance</strong>, or <strong>EFZA</strong>.
     </p>
 
-    <table>
-      <tr>
-        <th>Layer</th>
-        <th>How to read it</th>
-      </tr>
-      <tr>
-        <td>Original paper</td>
-        <td>Human-centered AI, mathematics, tools, philosophy, real-world outcomes.</td>
-      </tr>
-      <tr>
-        <td>Mathematical bridge</td>
-        <td>Finite modular constraints preserve bounded density; unbounded multiplicative filtering tends toward collapse.</td>
-      </tr>
-      <tr>
-        <td>Interpretive extension</td>
-        <td>Site-specific vocabulary such as 9423 / #atomsBalance / EFZA used to discuss analogous structure across broader domains.</td>
-      </tr>
-    </table>
+    <p>
+      These belong to an interpretive extension layer. They are not claims of the original arXiv paper and are not derived as formal results.
+    </p>
 
     <h2>5. Links</h2>
-    <p>
-      For readers interested in the mathematics first, the clean entry point is the density note itself.
-    </p>
+
     <div class="note">
-      <div><strong>Main math note:</strong> antiviolentIntelligence.ai/9423-invariantV2.pdf</div>
-      <div><strong>Submitting note:</strong> density behavior under primorial sieve and structured modular constraints</div>
+      <div><strong>Main math:</strong> <a href="/main.pdf">main.pdf</a></div>
+      <div><strong>Framework:</strong> <a href="/9423/">9423 system</a></div>
+      <div><strong>Repo:</strong> <a href="https://github.com/thinkthoughts/arxiv5867">arxiv5867</a></div>
     </div>
 
     <h2>6. Conclusion</h2>
+
     <p>
-      This page proposes a narrow correspondence: the paper’s emphasis on bounded, human-centered tool use can be read alongside a simple mathematical contrast between finite constraints that preserve bounded density and unbounded multiplicative filtering that drives density toward collapse. Everything beyond that belongs to a separate interpretive layer and should be read as extension, not attribution.
+      This note presents a narrow structural correspondence: bounded constraint systems preserve admissible structure, while unbounded accumulation leads to collapse. The mathematical result provides a simple model for that distinction, while the broader 9423 vocabulary remains an interpretive extension.
     </p>
 
     <hr>
+
     <div class="footnote">
-      This page is an interpretive bridge. It summarizes an arXiv paper, states a mathematical correspondence, and then optionally notes a broader site-specific vocabulary. It is not part of the original paper, and it does not attribute the extension layer to the paper’s authors.
+      9423 Phase-Lock Note — interpretive bridge.<br>
+      This page summarizes an arXiv paper, introduces a mathematical correspondence, and optionally references a broader site vocabulary. It is not part of the original paper.
     </div>
+
   </div>
 </div>
 </body>
