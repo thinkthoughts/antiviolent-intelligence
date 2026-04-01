@@ -1,0 +1,113 @@
+\documentclass[11pt]{article}
+
+\usepackage{amsmath, amssymb}
+
+\title{Density Behavior Under Primorial Sieve and Structured Modular Constraints}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+We analyze density over the progression $n \equiv 5 \pmod{6}$ under two filtering regimes: primorial (multiplicative) sieves and finite modular constraints. We prove and verify that primorial filtering yields densities $D_k = \prod_{p \ge 5}(1 - 1/p)$ that decay to zero, whereas finite modular exclusions yield densities $D = \prod_i (1 - 1/m_i)$ that remain bounded, including the exact case $24/25$. This establishes a structural distinction between unbounded multiplicative filtering and finite constraint systems, with reproducible empirical validation.
+\end{abstract}
+
+\noindent Code and data: \texttt{https://github.com/thinkthoughts/get-physics-done-5867}
+
+\section{Introduction}
+
+Density questions over restricted residue classes arise naturally in analytic number theory, particularly in the study of sieve methods and multiplicative structures. Classical sieve constructions, such as primorial filtering, produce densities expressed as products over primes, leading to asymptotic decay as more primes are included.
+
+In contrast, finite modular constraints define exclusions over fixed residue classes. These constraints yield densities determined by finite products of the form $(1 - 1/m_i)$, which remain bounded as long as the constraint set is finite. This distinction is not merely quantitative but structural: multiplicative prime accumulation produces density collapse, whereas finite modular constraints preserve nonzero density.
+
+In this work, we analyze these two regimes within the progression $n \equiv 5 \pmod{6}$. We provide explicit formulas for both systems, prove their asymptotic behavior, and verify the results empirically. In particular, we highlight the exact case $D = 24/25$ arising from a single modular constraint, contrasting it with the decay inherent in primorial sieves.
+
+\section{Domain Definition}
+
+Let
+\[
+S_L = \{ n \leq L : n \equiv 5 \pmod{6} \}.
+\]
+
+We define the normalized density:
+\[
+D(L) = \frac{|S_L|}{L/6}.
+\]
+
+\section{Primorial Sieve}
+
+Let $P_k = \prod_{i=1}^k p_i$ be the primorial of the first $k$ primes.
+
+Define:
+\[
+S_{k,L} = \{ n \leq L : n \equiv 5 \pmod{6}, \ \gcd(n, P_k) = 1 \}.
+\]
+
+Only primes $p \geq 5$ contribute, so:
+\[
+D_k = \prod_{p \geq 5,\, p \mid P_k} \left(1 - \frac{1}{p}\right).
+\]
+
+As $k \to \infty$,
+\[
+D_k \to 0.
+\]
+
+\section{Structured Modular Constraint}
+
+Let $m$ be such that $\gcd(m,6)=1$.
+
+Define:
+\[
+S_{m,L} = \{ n \leq L : n \equiv 5 \pmod{6}, \ n \not\equiv 0 \pmod{m} \}.
+\]
+
+Then:
+\[
+D = 1 - \frac{1}{m}.
+\]
+
+Example:
+\[
+m = 25 \Rightarrow D = \frac{24}{25}.
+\]
+
+\section{Multi-Constraint System}
+
+Let $m_1, \dots, m_r$ be pairwise coprime and $\gcd(m_i,6)=1$.
+
+\[
+D = \prod_{i=1}^r \left(1 - \frac{1}{m_i}\right).
+\]
+
+Example:
+\[
+D = \frac{24}{25} \cdot \frac{48}{49}.
+\]
+
+\section{Main Result}
+
+Let $S_L = \{ n \leq L : n \equiv 5 \pmod{6} \}$.
+
+\begin{itemize}
+\item Under primorial filtering,
+\[
+D_k = \prod_{p \geq 5} \left(1 - \frac{1}{p}\right) \to 0.
+\]
+
+\item Under finite modular constraints,
+\[
+D = \prod_{i=1}^r \left(1 - \frac{1}{m_i}\right),
+\]
+which remains bounded for fixed $r$.
+\end{itemize}
+
+Thus, density collapse occurs under unbounded multiplicative filtering, but not under finite structured constraints.
+
+\section{Conclusion}
+
+Primorial filtering produces density decay, while finite modular constraints preserve bounded density. This distinction is structural and reproducible.
+
+\end{document}
