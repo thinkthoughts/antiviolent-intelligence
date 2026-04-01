@@ -1,0 +1,251 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: #faf9f7;
+  color: #1a1a1a;
+  font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, 'Times New Roman', serif;
+  line-height: 1.5;
+  padding: 2rem 1rem;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  background: #ffffff;
+  border-radius: 28px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.05), 0 2px 4px rgba(0,0,0,0.02);
+  overflow: hidden;
+  border: 1px solid #eae7e2;
+}
+
+.paper-header {
+  padding: 2rem 2rem 1.2rem 2rem;
+  border-bottom: 1px solid #ece7e0;
+  background: #ffffff;
+}
+
+.arxiv-id {
+  font-family: 'SF Mono', 'JetBrains Mono', monospace;
+  font-size: 0.85rem;
+  letter-spacing: -0.2px;
+  color: #b45f2b;
+  background: #fef4e8;
+  display: inline-block;
+  padding: 0.2rem 0.7rem;
+  border-radius: 30px;
+  margin-bottom: 0.75rem;
+}
+
+h1 {
+  font-size: 1.9rem;
+  font-weight: 550;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  margin: 0.5rem 0 0.25rem 0;
+  color: #1f2a2e;
+}
+
+.authors {
+  font-size: 0.95rem;
+  color: #4b5563;
+  margin-top: 0.75rem;
+  border-left: 3px solid #d4c6b2;
+  padding-left: 1rem;
+}
+
+.abstract {
+  margin-top: 1.2rem;
+  font-size: 0.95rem;
+  color: #2c3e2f;
+  background: #fefcf8;
+  padding: 1rem 1.2rem;
+  border-radius: 18px;
+  border: 1px solid #efe6db;
+}
+
+.strip {
+  background: #f0ede7;
+  padding: 0.75rem 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  font-family: 'SF Mono', monospace;
+  font-size: 0.85rem;
+  border-bottom: 1px solid #e2d9cf;
+  color: #2d3e2b;
+}
+
+.badge {
+  background: #2c3a27;
+  color: #f0ede0;
+  padding: 0.2rem 0.9rem;
+  border-radius: 40px;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+}
+
+.analysis {
+  padding: 2rem 2rem 2.2rem 2rem;
+}
+
+h2 {
+  font-size: 1.35rem;
+  font-weight: 520;
+  letter-spacing: -0.3px;
+  margin: 1.5rem 0 0.8rem 0;
+  color: #2c2b26;
+  border-left: 4px solid #b87333;
+  padding-left: 0.9rem;
+}
+
+h2:first-of-type {
+  margin-top: 0;
+}
+
+h3 {
+  font-weight: 540;
+  font-size: 1.05rem;
+  margin: 1.2rem 0 0.4rem 0;
+  color: #3a4a36;
+}
+
+p, li {
+  font-size: 0.96rem;
+}
+
+p {
+  margin: 0 0 1rem 0;
+}
+
+ul {
+  margin: 0.5rem 0 1rem 1.4rem;
+}
+
+a {
+  color: #b45f2b;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.nav-links {
+  margin-top: 0.8rem;
+  font-size: 0.85rem;
+}
+
+.grid-3 {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin: 1.2rem 0 1.8rem;
+}
+
+.card {
+  flex: 1;
+  min-width: 180px;
+  background: #fefbf7;
+  border-radius: 24px;
+  padding: 1rem 1.2rem;
+  border: 1px solid #e7dfd4;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.02);
+}
+
+.card .symbol {
+  font-size: 2.2rem;
+  font-weight: 500;
+  font-family: monospace;
+  margin-bottom: 0.4rem;
+  color: #b45a2e;
+}
+
+.card .title {
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: -0.2px;
+  margin-bottom: 0.5rem;
+}
+
+.math-inline {
+  font-family: 'SF Mono', 'Courier New', monospace;
+  background: #f0ede8;
+  padding: 0.1rem 0.3rem;
+  border-radius: 8px;
+  font-size: 0.85rem;
+}
+
+.diagram {
+  background: #f6f3ed;
+  padding: 1.2rem 1.5rem;
+  border-radius: 24px;
+  margin: 1.8rem 0;
+  text-align: center;
+  border: 1px solid #e0d6ca;
+}
+
+.angle-highlight {
+  font-size: 1.3rem;
+  font-weight: 500;
+  background: #e9e2d7;
+  display: inline-block;
+  padding: 0.2rem 1rem;
+  border-radius: 60px;
+  margin: 0 0.2rem;
+}
+
+.note {
+  background: #f7f2ea;
+  border-radius: 22px;
+  padding: 0.9rem 1.2rem;
+  margin: 1.4rem 0;
+  border: 1px solid #eadfce;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fffdf9;
+  border-radius: 20px;
+  overflow: hidden;
+  margin: 0.5rem 0;
+}
+
+th, td {
+  text-align: left;
+  padding: 10px 8px;
+  border-bottom: 1px solid #f0e6dc;
+  vertical-align: top;
+}
+
+th {
+  border-bottom: 1px solid #e2d4c6;
+}
+
+tr:last-child td {
+  border-bottom: none;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #e2d7cb;
+  margin: 1rem 0;
+}
+
+.footnote {
+  font-size: 0.78rem;
+  color: #6b5a4a;
+  margin-top: 2rem;
+  border-top: 1px solid #ece1d4;
+  padding-top: 1rem;
+  text-align: center;
+}
+
+@media (max-width: 680px) {
+  .container { border-radius: 20px; }
+  .analysis, .paper-header { padding: 1.2rem; }
+  h1 { font-size: 1.5rem; }
+  .strip { padding: 0.9rem 1.2rem; }
+}
