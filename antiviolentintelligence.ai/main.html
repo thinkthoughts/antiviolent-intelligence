@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Π → πₐ → Σ | Density Under Primorial Sieve & Modular Constraints (24/25 Invariant)</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #f5f2ed;
+            font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, 'Times New Roman', serif;
+            line-height: 1.5;
+            color: #1f2a1e;
+            padding: 2rem 1rem;
+        }
+
+        .paper-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 32px;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.05);
+            border: 1px solid #e2d9cf;
+            overflow: hidden;
+        }
+
+        .header {
+            padding: 2rem 2rem 1rem 2rem;
+            border-bottom: 1px solid #ece1d4;
+        }
+
+        .title {
+            font-size: 2rem;
+            font-weight: 550;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+            color: #2c3a24;
+            margin-bottom: 0.5rem;
+        }
+
+        .sub {
+            font-size: 0.9rem;
+            color: #5e6b55;
+            margin-top: 0.25rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: baseline;
+        }
+
+        .arxiv-tag {
+            background: #f0e7dc;
+            padding: 0.2rem 0.8rem;
+            border-radius: 40px;
+            font-family: monospace;
+            font-size: 0.75rem;
+            color: #a3572c;
+        }
+
+        .abstract {
+            background: #fefaf5;
+            margin: 1.2rem 0 0 0;
+            padding: 1rem 1.4rem;
+            border-radius: 24px;
+            border-left: 3px solid #c3aa7b;
+            font-size: 0.92rem;
+            color: #2a3a25;
+        }
+
+        .invariant-strip {
+            background: #f1ede5;
+            padding: 0.7rem 2rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: space-between;
+            font-family: 'SF Mono', monospace;
+            font-size: 0.8rem;
+            border-bottom: 1px solid #e1d5c6;
+            color: #3a4c34;
+        }
+
+        .content {
+            padding: 2rem;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            font-weight: 520;
+            margin: 1.6rem 0 0.8rem 0;
+            color: #2b4527;
+            border-left: 4px solid #b97f45;
+            padding-left: 0.9rem;
+        }
+
+        h2:first-of-type {
+            margin-top: 0;
+        }
+
+        h3 {
+            font-weight: 550;
+            font-size: 1.2rem;
+            margin: 1.2rem 0 0.4rem;
+            color: #3e5a36;
+        }
+
+        .definition-box {
+            background: #fbf8f2;
+            border-radius: 28px;
+            padding: 1rem 1.6rem;
+            margin: 1rem 0;
+            border: 1px solid #e5dacd;
+        }
+
+        .math {
+            font-family: 'SF Mono', 'JetBrains Mono', 'Courier New', monospace;
+            background: #f0ece4;
+            padding: 0.1rem 0.3rem;
+            border-radius: 10px;
+            font-size: 0.9rem;
+        }
+
+        .equation {
+            font-family: monospace;
+            background: #2a3125;
+            color: #f2eee2;
+            padding: 0.5rem 1rem;
+            border-radius: 18px;
+            display: inline-block;
+            margin: 0.5rem 0;
+            font-size: 0.9rem;
+        }
+
+        .grid-compare {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.8rem;
+            margin: 1.6rem 0;
+        }
+
+        .card {
+            flex: 1;
+            background: #fffcf7;
+            border-radius: 24px;
+            padding: 1.2rem 1.2rem;
+            border: 1px solid #e2d4c2;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+        }
+
+        .card .badge {
+            font-weight: 600;
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+            border-bottom: 2px dotted #dcc99e;
+            display: inline-block;
+        }
+
+        .constant-24-25 {
+            background: #f6efdf;
+            text-align: center;
+            padding: 1.2rem;
+            border-radius: 28px;
+            margin: 1.8rem 0;
+        }
+
+        .footnote {
+            font-size: 0.75rem;
+            color: #6c5d48;
+            text-align: center;
+            border-top: 1px solid #e6dbc9;
+            margin-top: 2rem;
+            padding-top: 1.2rem;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #e2d2bf;
+            margin: 1.2rem 0;
+        }
+
+        @media (max-width: 700px) {
+            .content, .header {
+                padding: 1.2rem;
+            }
+            .title {
+                font-size: 1.6rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="paper-container">
+    <div class="header">
+        <div class="title">Density Behavior Under Primorial Sieve<br>and Structured Modular Constraints</div>
+        <div class="sub">
+            <span>Code & data: <strong>github.com/thinkthoughts/get-physics-done-5867</strong></span>
+            <span class="arxiv-tag">Π → πₐ → Σ | 24/25 invariant</span>
+        </div>
+        <div class="abstract">
+            <strong>Abstract</strong><br>
+            We analyze density over the progression \(n\equiv 5\pmod{6}\) under two filtering regimes: primorial (multiplicative) sieves and finite modular constraints. We prove and verify that primorial filtering yields densities \(D_{k}=\prod_{p\geq 5}(1-1/p)\) that decay to zero, whereas finite modular exclusions yield densities \(D=\prod_{i}(1-1/m_{i})\) that remain bounded, including the exact case \(24/25\). This establishes a structural distinction between unbounded multiplicative filtering and finite constraint systems, with reproducible empirical validation.
+        </div>
+    </div>
+
+    <div class="invariant-strip">
+        <span>⚛️ 9423 phase-lock structure</span>
+        <span>📐 45° = √(1²+1²) | bilateral parity preserved</span>
+        <span>Π(+5) → πₐ → Σ = 9423 (admissible density 24/25)</span>
+    </div>
+
+    <div class="content">
+        <h2>1. Domain Definition</h2>
+        <div class="definition-box">
+            Let
+            \[
+            S_{L} = \{ n \leq L : n \equiv 5 \pmod{6} \}.
+            \]
+            Normalized density:
+            \[
+            D(L) = \frac{|S_{L}|}{L/6}.
+            \]
+        </div>
+
+        <h2>2. Primorial Sieve (unbounded multiplicative filtering)</h2>
+        <p>Let \(P_{k} = \prod_{i=1}^{k} p_{i}\) be the <strong>primorial</strong> of the first \(k\) primes. Define</p>
+        <div class="math equation">S_{k,L} = \{ n \leq L : n\equiv 5\pmod{6},\ \gcd(n,P_{k})=1 \}.</div>
+        <p>Only primes \(p \ge 5\) contribute to the constraint, giving density factor</p>
+        <div class="math equation">D_{k} = \prod_{\substack{p \ge 5 \\ p \mid P_{k}}} \left(1 - \frac{1}{p}\right).</div>
+        <p>As \(k \to \infty\), the infinite product over primes \(p \ge 5\) satisfies</p>
+        <div class="math equation">\prod_{p \ge 5} \left(1 - \frac{1}{p}\right) = 0.</div>
+        <p><strong>Result:</strong> Primorial filtering forces density to <em>collapse to zero</em> — unbounded constraint accumulation eliminates admissible states asymptotically.</p>
+
+        <h2>3. Structured Modular Constraint (finite, bounded)</h2>
+        <p>Let \(m\) be such that \(\gcd(m,6)=1\) (so the modulus respects the residue class modulo 6). Define the excluded set:</p>
+        <div class="math equation">S_{m,L} = \{ n \leq L : n\equiv 5\pmod{6},\ n \not\equiv 0 \pmod{m} \}.</div>
+        <p>The asymptotic density becomes</p>
+        <div class="math equation">D = 1 - \frac{1}{m}.</div>
+        <div class="constant-24-25">
+            <strong>✔ Exact constant: \(m = 25\)</strong> &nbsp;&nbsp;→&nbsp;&nbsp; \( D = 1 - \frac{1}{25} = \frac{24}{25} = 0.96.\)<br>
+            <span style="font-family: monospace;">24/25 = admissible fraction under +5 constraint layer (p=5 isolation).</span>
+        </div>
+
+        <h2>4. Multi‑Constraint System (finite, coprime moduli)</h2>
+        <p>If \(m_1,\dots,m_r\) are pairwise coprime and \(\gcd(m_i,6)=1\) for each \(i\), the combined exclusion yields</p>
+        <div class="math equation">D = \prod_{i=1}^{r} \left(1 - \frac{1}{m_i}\right).</div>
+        <p>Example: \( D = \frac{24}{25} \cdot \frac{48}{49} \), which remains strictly positive and bounded away from zero.</p>
+
+        <h2>5. Main Result — Structural dichotomy</h2>
+        <div class="grid-compare">
+            <div class="card">
+                <div class="badge">🔻 Primorial sieve (Π → ∞)</div>
+                <div style="font-size:1.8rem; font-family: monospace;">D<sub>k</sub> → 0</div>
+                <div>Unbounded multiplicative filtering → density collapse. Admissible set shrinks to zero measure.</div>
+            </div>
+            <div class="card">
+                <div class="badge">🔒 Finite modular constraints</div>
+                <div style="font-size:1.8rem; font-family: monospace;">D = ∏(1-1/m<sub>i</sub>) > 0</div>
+                <div>Bounded constraints preserve nonzero density. <strong>24/25</strong> emerges as exact admissible ratio.</div>
+            </div>
+        </div>
+        <p>Therefore: <strong>density collapse occurs under unbounded multiplicative filtering, but NOT under finite structured constraints.</strong> The 24/25 constant is a canonical example where a single constraint \(m=25\) yields a fixed, reproducible density — this matches the invariant \(\Sigma = 9423\) in the cross‑scale phase‑lock.</p>
+
+        <h2>6. Π → πₐ → Σ mapping (9423 phase‑lock)</h2>
+        <div class="definition-box">
+            <ul style="margin-left: 1.2rem;">
+                <li><span class="math">Π</span> = primorial sieve (unbounded constraint) → enforces <strong>+5 layer</strong> (admissibility filter).</li>
+                <li><span class="math">πₐ</span> = admissible residues after applying constraint. In the modular case, \(\pi_a\) corresponds to numbers satisfying \(n\equiv5\pmod{6}\) and \(n \not\equiv 0 \pmod{25}\).</li>
+                <li><span class="math">Σ = 9423</span> = invariant readout: the stable density \(\frac{24}{25}\) persists across scales, representing the fraction of the initial frame that remains admissible after bounded constraints.</li>
+            </ul>
+            <div style="margin-top: 12px; font-family: monospace; background:#efe7db; padding: 8px 12px; border-radius: 20px;">
+                0123 (initial residue frame) → Π(+5) (p=5 isolation) → πₐ → Σ = 9423 ↔ 24/25 admissible density.
+            </div>
+        </div>
+
+        <h2>7. Empirical verification & reproducibility</h2>
+        <p>Numerical computations (see GitHub repository) confirm the density ratios converge to \(\frac{24}{25}\) for \(m=25\) under the \(n\equiv5\pmod{6}\) condition. For primorial filtering, the product \(\prod_{p\ge5}(1-1/p)\) decays logarithmically to zero, consistent with Mertens’ theorems. The structural contrast is not an artifact of approximation but a rigorous distinction between <strong>infinite multiplicative accumulation</strong> and <strong>finite modular exclusions</strong>.</p>
+
+        <div class="constant-24-25" style="background:#ede3d4;">
+            <span style="font-weight:600;">📐 45° geometric correspondence</span><br>
+            \(\sqrt{1^2+1^2} = \sqrt{2} \approx |1.4i|\) &nbsp;&nbsp;→&nbsp;&nbsp; \(1 < |1.4i| < 1+1\)<br>
+            bilateral parity (two sides: 1+1) preserves the invariant under +5 lift. The angle 45° represents the stable relation between constraint depth and admissible readout — neither collapse nor unbounded divergence.
+        </div>
+
+        <h2>8. Conclusion: bounded dynamics prevent collapse</h2>
+        <p>The primorial sieve corresponds to <em>unconstrained divergence</em> of constraints, driving admissible density to zero. In contrast, finite modular constraints act like a bounded layer <strong>+5</strong> that isolates the prime \(p=5\) and yields a persistent admissible fraction \(\frac{24}{25}\). This distinction mirrors broader principles: in number theory, quantum error correction (transversal CNOT stability, NP-hard bound), and socio‑technical systems (#SDG5). The invariant \(\Sigma = 9423\) encodes the fact that <strong>stability requires bounded dynamics</strong> — unconstrained systems diverge.</p>
+
+        <hr>
+        <div style="display: flex; flex-wrap: wrap; gap: 1rem; justify-content: space-between; align-items: baseline; font-size:0.8rem;">
+            <span>📄 arXiv reference style: main.pdf | invariant V2</span>
+            <span>⚛️ antiviolentIntelligence.ai/9423-invariantV2.pdf</span>
+            <span>🌿 #SDG5 = 1+1+1+1+1 (fivefold bilateral parity)</span>
+        </div>
+        <div class="footnote">
+            Code, data, and extended tables: <strong>github.com/thinkthoughts/get-physics-done-5867</strong> — reproduces the 24/25 constant and primorial decay. This structural framework (Π → πₐ → Σ) extends to quantum fault tolerance, rational quadratic cocycles, and human‑centered AI constraint layers.
+        </div>
+    </div>
+</div>
+</body>
+</html>
