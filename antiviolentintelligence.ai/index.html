@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Antiviolent Intelligence</title>
+  <meta
+    name="description"
+    content="Antiviolent Intelligence reports conditions where people are and identifies sustainable next steps against violence toward Earth and life."
+  >
+
+  <link rel="stylesheet" href="styles/avi.css">
+
+  <script>
+    (() => {
+      const storedTheme = localStorage.getItem("theme");
+      const initialTheme =
+        storedTheme === "dark" || storedTheme === "light"
+          ? storedTheme
+          : window.matchMedia("(prefers-color-scheme: dark)").matches
+            ? "dark"
+            : "light";
+
+      document.documentElement.dataset.theme = initialTheme;
+    })();
+  </script>
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="site-title" href="index.html" aria-label="Antiviolent Intelligence home">
+        antiviolentintelligence.ai
+      </a>
+
+      <nav class="site-navigation" aria-label="Primary navigation">
+        <a href="about.html">About</a>
+        <button
+          id="theme-toggle"
+          class="theme-toggle"
+          type="button"
+          aria-label="Toggle dark mode"
+          title="Toggle dark mode"
+        >
+          ◐
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="landing-main">
+    <section class="avi-legend" aria-label="AVI legend">
+      <article class="legend-group">
+        <div class="legend-label">4️⃣</div>
+        <div class="legend-card" data-copy-target="four-reading-points">
+          <button class="copy-button" type="button" data-copy="four-reading-points" aria-label="Copy four reading points">
+            ⧉
+          </button>
+          <pre id="four-reading-points" class="legend-pre" aria-label="Four decentralized next positions"></pre>
+        </div>
+      </article>
+
+      <article class="legend-group">
+        <div class="legend-label">3️⃣</div>
+        <div class="legend-card">
+          <button class="copy-button" type="button" data-copy="three-admissible" aria-label="Copy three admissible readings">
+            ⧉
+          </button>
+          <pre id="three-admissible" class="legend-pre">★ ★    ★ ★    ★ ✕
+★ ★    ★ ✕    ✕ ✕</pre>
+        </div>
+      </article>
+
+      <article class="legend-group">
+        <div class="legend-label">2️⃣</div>
+        <div class="legend-card">
+          <button class="copy-button" type="button" data-copy="two-vocabulary" aria-label="Copy AVI vocabulary">
+            ⧉
+          </button>
+          <pre id="two-vocabulary" class="legend-pre legend-vocabulary">□   next
+★★  sustainable steps
+✕   violence</pre>
+        </div>
+      </article>
+    </section>
+
+    <div class="feed-marker" aria-hidden="true">🔢</div>
+
+    <section
+      id="report-gallery"
+      class="report-gallery"
+      aria-label="Antiviolent Intelligence reports"
+      aria-live="polite"
+    >
+      <p class="loading-message">Loading reports…</p>
+    </section>
+
+    <nav
+      id="pagination"
+      class="pagination"
+      aria-label="Report pages"
+    ></nav>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p class="footer-statement">□ next · ★ sustainable steps · ✕ violence</p>
+
+      <nav class="footer-links" aria-label="Related sites">
+        <a href="https://labreports.app" rel="external">labreports.app</a>
+        <a href="https://climatereality.app" rel="external">climatereality.app</a>
+        <a href="https://climatedemocracy.app" rel="external">climatedemocracy.app</a>
+        <a href="https://goodmath.app" rel="external">goodmath.app</a>
+      </nav>
+
+      <p class="footer-copyright">
+        © <span id="current-year"></span> antiviolentintelligence.ai
+      </p>
+    </div>
+  </footer>
+
+  <script src="js/landing.js"></script>
+  <script src="js/dark-mode.js"></script>
+  <script>
+    document.getElementById("current-year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

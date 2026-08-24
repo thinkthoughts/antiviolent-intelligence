@@ -1,0 +1,61 @@
+[
+  {
+    "date": "2026-08-23",
+    "updated": "2026-08-23",
+    "source": "Antiviolent Intelligence",
+    "identifier": "AVI-0000",
+    "title": "AI: Artificial vs Antiviolent",
+    "summary": "Four reading points. Three admissible readings. Two outcomes: sustainable steps or violence.",
+    "area": "Math",
+    "policy": [],
+    "life": [],
+    "geography": [
+      "Earth"
+    ],
+    "signal": [
+      "sustainable",
+      "sustainable",
+      "sustainable",
+      "sustainable"
+    ],
+    "pinned": true,
+    "status": "active",
+    "report": "reports/avi-0000/",
+    "image": ""
+  },
+  {
+    "date": "2026-08-23",
+    "updated": "2026-08-23",
+    "source": "Antiviolent Intelligence",
+    "identifier": "AVI-0001",
+    "title": "Puerto Rico Water",
+    "summary": "A first location-based report on water conditions, infrastructure, violence, and sustainable next steps.",
+    "area": "Infrastructure",
+    "policy": [
+      "Water"
+    ],
+    "life": [
+      "Family",
+      "Working",
+      "Retired",
+      "In School"
+    ],
+    "geography": [
+      "Earth",
+      "North America",
+      "Caribbean",
+      "Puerto Rico",
+      "San Juan"
+    ],
+    "signal": [
+      "sustainable",
+      "violence",
+      "violence",
+      "violence"
+    ],
+    "pinned": false,
+    "status": "active",
+    "report": "reports/avi-0001/",
+    "image": ""
+  }
+]

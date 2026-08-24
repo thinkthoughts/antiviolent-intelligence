@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>About AVI</title>
+  <meta name="description" content="About the Antiviolent Intelligence reading vocabulary.">
+  <link rel="stylesheet" href="styles/avi.css">
+  <script>
+    (() => {
+      const storedTheme = localStorage.getItem("theme");
+      const initialTheme =
+        storedTheme === "dark" || storedTheme === "light"
+          ? storedTheme
+          : window.matchMedia("(prefers-color-scheme: dark)").matches
+            ? "dark"
+            : "light";
+      document.documentElement.dataset.theme = initialTheme;
+    })();
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="site-title" href="index.html">antiviolentintelligence.ai</a>
+      <nav class="site-navigation" aria-label="Primary navigation">
+        <a href="index.html">Reports</a>
+        <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle dark mode">◐</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="landing-main">
+    <section class="legend-group">
+      <div class="legend-label">About AVI</div>
+      <div class="legend-card">
+        <pre class="legend-pre">□   next
+★★  sustainable steps
+✕   violence</pre>
+      </div>
+    </section>
+
+    <p>This page is intentionally minimal for the first build. It can expand into the full AVI legend and reporting specification.</p>
+  </main>
+
+  <script src="js/dark-mode.js"></script>
+</body>
+</html>
