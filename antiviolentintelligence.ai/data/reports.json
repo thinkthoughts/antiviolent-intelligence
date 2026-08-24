@@ -1,28 +1,5 @@
 [
   {
-    "id": "AVI-0001",
-    "title": "The Voice of Hind Rajab",
-    "summary": "Violent men authorized and carried out the brutal killings of thousands.  One was Hind RAjab.",
-    "category": "War",
-    "signal": [
-      "sustainable",
-      "violence",
-      "violence",
-      "violence"
-    ],
-    "tags": [
-      "War",
-      "Health",
-      "Gaza",
-      "Earth"
-    ],
-    "date": "2026-08-23",
-    "image": "images/AVI_0001_Voice_HR.png",
-    "source": "YouTube",
-    "url": "https://www.youtube.com/watch?v=k6V-XYcVpyE",
-    "external": true
-  },
-  {
     "date": "2026-08-23",
     "updated": "2026-08-23",
     "source": "Antiviolent Intelligence",
@@ -44,13 +21,44 @@
     "pinned": true,
     "status": "active",
     "report": "reports/avi-0000/",
-    "image": ""
+    "image": "",
+    "external": false
+  },
+  {
+    "date": "2026-08-23",
+    "updated": "2026-08-23",
+    "source": "YouTube",
+    "identifier": "AVI-0001",
+    "title": "The Voice of Hind Rajab",
+    "summary": "Violent men authorized and carried out the brutal killings of thousands. One was Hind Rajab.",
+    "area": "War",
+    "policy": [
+      "Health"
+    ],
+    "life": [],
+    "geography": [
+      "Earth",
+      "Asia",
+      "Middle East",
+      "Gaza"
+    ],
+    "signal": [
+      "sustainable",
+      "violence",
+      "violence",
+      "violence"
+    ],
+    "pinned": false,
+    "status": "active",
+    "report": "https://www.youtube.com/watch?v=k6V-XYcVpyE",
+    "image": "images/AVI_0001_Voice_HR.png",
+    "external": true
   },
   {
     "date": "2026-08-23",
     "updated": "2026-08-23",
     "source": "Antiviolent Intelligence",
-    "identifier": "AVI-0001",
+    "identifier": "AVI-0002",
     "title": "Puerto Rico Water",
     "summary": "A first location-based report on water conditions, infrastructure, violence, and sustainable next steps.",
     "area": "Infrastructure",
@@ -78,7 +86,8 @@
     ],
     "pinned": false,
     "status": "active",
-    "report": "reports/avi-0001/",
-    "image": ""
+    "report": "reports/avi-0002/",
+    "image": "",
+    "external": false
   }
 ]
