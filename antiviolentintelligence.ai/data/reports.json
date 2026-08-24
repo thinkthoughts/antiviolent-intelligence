@@ -1,5 +1,27 @@
 [
   {
+    "id": "AVI-0001",
+    "title": "Voice",
+    "category": "War",
+    "signal": [
+      "sustainable",
+      "violence",
+      "violence",
+      "violence"
+    ],
+    "tags": [
+      "War",
+      "Health",
+      "Gaza",
+      "Earth"
+    ],
+    "date": "2026-08-23",
+    "image": "images/AVI_0001_Voice_HR.png",
+    "source": "YouTube",
+    "url": "https://www.youtube.com/watch?v=k6V-XYcVpyE",
+    "external": true
+  },
+  {
     "date": "2026-08-23",
     "updated": "2026-08-23",
     "source": "Antiviolent Intelligence",
