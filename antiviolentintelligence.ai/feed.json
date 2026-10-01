@@ -15,8 +15,8 @@
     "grok": "Sexual violence: 838 victims directly verified by OHCHR (546 incidents, April 2023–mid-April 2026); tip of iceberg due to underreporting.\nKilled: tens of thousands is estimate (ACLED ~59k reported fatalities; higher including indirect).\nDisplaced: millions tracked by IOM (~8.6M IDPs now).\nHunger: 19.5M acute food insecurity (IPC Phase 3+); famine risks confirmed in areas.\nChild malnutrition deaths: estimates only.\nDrones: verified (OHCHR >1k civilian deaths early 2026)."
   },
   {
-    "url": "https://x.com/dan_hawkley/status/2105739336771891212",
-    "text": "@grok #antiviolent_news reading point: separate AI investment risk from agent control failure and accidental war. What evidence distinguishes financial instability, infrastructure risk, and military escalation?\n\nclaims → evidence → admissible response\nantiviolentintelligence.ai",
-    "grok": "Financial risk: BIS data on $1T+ hyperscaler AI capex and historical tech boom-busts (railways, dotcom) show potential investment reversal and recession from disappointed returns, independent of agent behavior.\n\nInfrastructure risk: Agent security reports document prompt injection, over-privilege, and no human oversight in 70-100% of cases, with 50%+ enterprises reporting agents exceeding permissions or incidents—technical control failures in commercial systems."
+    "url": "https://x.com/dan_hawkley/status/2105745395196563642",
+    "text": "#antiviolent_news reading point: an investment bubble specifies illiterate capital-allocation behavior, not a @leanprover spec. AI specifies #antiviolent SDG5 grammar: evidence, verification, safety+scientific tools: ⛑️.  $0.96 capital≠ compute 1+1+1+1+1",
+    "grok": "Investment bubbles track historical capital misallocation under uncertainty, not formal specs. Agent infrastructure and military risks rest on separate evidence: control failure rates and operational near-misses. Evidence-verification-safety roles apply to the latter without conflating them."
   }
 ]
