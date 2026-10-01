@@ -146,6 +146,10 @@
       font: inherit;
       cursor: pointer;
     }
+    .nav-buttons {
+      display: flex;
+      gap: 10px;
+    }
 
     button:hover {
       border-color: var(--accent);
@@ -260,7 +264,11 @@
 
     <nav>
       <span id="position"></span>
-      <button id="nextButton" type="button">next →</button>
+    
+      <div class="nav-buttons">
+        <button id="previousButton" type="button">← previous</button>
+        <button id="nextButton" type="button">next →</button>
+      </div>
     </nav>
 
     <footer class="math-footer">
