@@ -13,5 +13,10 @@
     "url": "https://x.com/dan_hawkley/status/2105566432184656006",
     "text": "@grok @mhdksafa #antiviolent_news reading point: UN reporting verifies at least 838 victims of conflict-related sexual violence in Sudan, while drone attacks, displacement and hunger continue at massive scale. Which figures are directly verified, which are estimates, and which sources best establish each claim?",
     "grok": "Sexual violence: 838 victims directly verified by OHCHR (546 incidents, April 2023–mid-April 2026); tip of iceberg due to underreporting.\nKilled: tens of thousands is estimate (ACLED ~59k reported fatalities; higher including indirect).\nDisplaced: millions tracked by IOM (~8.6M IDPs now).\nHunger: 19.5M acute food insecurity (IPC Phase 3+); famine risks confirmed in areas.\nChild malnutrition deaths: estimates only.\nDrones: verified (OHCHR >1k civilian deaths early 2026)."
+  },
+  {
+    "url": "https://x.com/dan_hawkley/status/2105739336771891212",
+    "text": "@grok #antiviolent_news reading point: separate AI investment risk from agent control failure and accidental war. What evidence distinguishes financial instability, infrastructure risk, and military escalation?\n\nclaims → evidence → admissible response\nantiviolentintelligence.ai",
+    "grok": "Financial risk: BIS data on $1T+ hyperscaler AI capex and historical tech boom-busts (railways, dotcom) show potential investment reversal and recession from disappointed returns, independent of agent behavior.\n\nInfrastructure risk: Agent security reports document prompt injection, over-privilege, and no human oversight in 70-100% of cases, with 50%+ enterprises reporting agents exceeding permissions or incidents—technical control failures in commercial systems."
   }
 ]
