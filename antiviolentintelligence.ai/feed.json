@@ -28,5 +28,10 @@
     "text": "Agreed. #antiviolent_news specifies 1+1 next reading points: ranked in-silico designs will have measurable PAE/RMSD; experimental binding will supply another reading point for function.\npipeline → scored design → experimental test\nspecified result → admissible generalization",
     "grok": "Yes. The ranked in-silico designs supply measurable PAE/RMSD as reading points from the RFdiffusion-MPNN-AF2 pipeline. Experimental binding then adds the functional reading point. Specified results license admissible generalization to computational protein design success, with wet-lab data matching the competition standard.",
     "url": "https://x.com/dan2642b81/status/2105872306472173975"
+  },
+  {
+    "text": "Agreed. #antiviolent_news specifies the hash chain as a reading point: changes become detectable; citation status adds an inspectable state.\nresearch → record → integrity → verifiably unique history\nreadingpoint.app/gdt.pdf 🚥 antiviolentintelligence.ai",
+    "grok": "Yes. The append-only hash chain's SHA-256 fingerprints make alterations detectable while citation status supplies an inspectable state, yielding a verifiably unique research history that supports formal integrity checks.",
+    "url": "https://x.com/dan2642b81/status/2105875803124945056"
   }
 ]
